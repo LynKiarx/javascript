@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <style>
+        input{
+            padding: 40px;
+        }
+        .demo{
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: black;
+          
+        }
+        .demo ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .demo ul li a{
+             display: block;
+             text-decoration: none;
+             padding: 40px;
+             font-size: 20px;
+             color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <ul>
+            <li>
+                <a href=""></a>
+            </li>
+        </ul>
+
+    </div>
+    <input type="button" value="FetchAPI" id="btn1">
+</body>
+<script>
+    getData()
+    document.getElementById("btn1").addEventListener("click",function(){
+       getData();
+    });
+    async function getData(){
+        let url = "https://reanweb.com/api/teaching/get-menu.php"
+        const rp =  await fetch(url);
+        const data = await rp.json();
+       let txt = "";
+       console.log(data);
+       data.forEach((el) => {
+            txt +=`
+            <li>
+                <a href="">${el.name}</a>
+            </li>`;
+       });
+       document.querySelector('.demo').children[0].innerHTML = txt;
+    }
+</script>
+</html>

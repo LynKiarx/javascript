@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <style>
+        #img{
+            width: 300px;
+            height: 400px;
+        }
+        input{
+            color: rgb(215, 208, 208);
+            background-color: black;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <img src="photo/dog.jpg" alt="" id="img" onmouseout="setOldImg()" onclick="setNewImg()" onmouseover="setNewImg()">
+    <input type="button" value="Set Img" onclick="setNewImg()" >
+    
+</body>
+<script>
+    function setOldImg(){
+    document.getElementById("img").setAttribute("src", "photo/dog.jpg")
+   }
+   function setNewImg(){
+    document.getElementById("img").setAttribute("src", "photo/coke.jpg")
+   }
+   function showE1(){
+    document.getElementById("img").style.display='flex';
+   }
+</script>
+</html>

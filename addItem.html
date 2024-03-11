@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Items</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="addItem.css" />
+  </head>
+  <body>
+    <label for="">Name</label>
+    <input type="text" name="" id="txt-name" />
+    <label for="">Url</label>
+    <input type="text" name="" id="txt-url" />
+    <input type="button" value="Add-Item" id="btnAdd" />
+    <input type="button" value="Filter" id="btnFind" />
+    <div class="data-box">
+      <ul>
+        <!-- <li>
+          <a href="">
+            <span class="title">Title</span>
+            <span class="url">Url</span>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <span class="title">Title</span>
+            <span class="url">Url</span>
+          </a>
+        </li> -->
+      </ul>
+    </div>
+  </body>
+  <script>
+    const items = [];
+    function filterItems(arr, query){
+      return arr.filter((el) => el['name'].toLowerCase().includes(query.toLowerCase()));
+    }
+    const txtname = document.getElementById("txt-name");
+    const txturl = document.getElementById("txt-url");
+    document.getElementById("btnFind").addEventListener("click",function(){
+      //const rs = items.filter((data) => data.name == txtname.value);
+      const rs = filterItems(items , txtname.value);
+      console.log(rs);
+      displayData(rs);
+      
+    });
+    document.getElementById("btnAdd").addEventListener("click", function () {
+      if (txtname.value == "") {
+        alert("Please enter name");
+        txtname.focus();
+        return;
+      } else if (txturl.value == "") {
+        alert("Please enter Url");
+        txturl.focus();
+        return;
+      }
+      var data = {
+       "name": txtname.value,
+        "url": txturl.value,
+      };
+      items.unshift(data);
+      //items.push(data);
+      displayData(items);
+      txtname.value = "";
+      txturl.value = "";
+      txtname.focus();
+      //remove items
+    });
+    displayData(items);
+
+    function displayData(data) {
+      let txt = "";
+      document.querySelector(".data-box").children[0].innerHTML = txt;
+      if (data.length > 0) {
+        data.forEach((el, i) => {
+          txt += `<li>
+          <a>
+            <span class="title">${el.name}</span>
+            <span class="url">${el.url}</span>
+            <i class="fa-solid fa-xmark btn-remove"></i>
+          </a>
+        </li>`;
+        });
+        document.querySelector(".data-box").children[0].innerHTML = txt;
+      
+        var btnRemove = document.querySelectorAll('.btn-remove');
+        btnRemove.forEach( (el , i) => {
+          el.addEventListener("click",function(){
+           console.log(items); 
+           items.splice(i , 1);
+           console.log(items); 
+            displayData(items);
+          });
+
+          });
+        }
+    }
+  </script>
+</html>

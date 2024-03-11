@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=
+    initial-scale=1.0"
+    />
+    <title>Test</title>
+  </head>
+  <body>
+    <div class="Menu_bar">
+      <div class="menu">
+        
+      </div>
+    </div>
+  </body>
+  <script>
+    // document.getElementById("btn1").addEventListener("click",function(){
+    //     var color = "red";
+    //     var txt = txt + `<li>
+    //         <a href ="">Rean Web</a>
+    //         </li>`;
+    //     var colorlist = ["red","green","black","blue","grey"];
+    //     for(var i=0;i<colorlist.length;i++){
+    //         console.log(colorlist[i]);
+    //     }
+    // });
+    var itemList = ["Home", "Apple", "Google", "SpaceX","Hello", "Meta"];
+    displayMenu();
+    function displayMenu() {
+      var txt = "";
+       
+      for (i in itemList) {
+        txt=txt +
+        `<li> 
+            <a href ="">${itemList[i]}</a>
+         </li>`;
+      }
+      console.log(txt);
+      document.querySelector('.menu').innerHTML = `<ul>${txt}</ul>`;
+    }
+  </script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0 ;
+            padding: 0;
+            list-style-type: none;
+            box-sizing: border-box;
+        }
+        .demo{
+
+            width: 50%;
+            background-color: black;
+            padding: 0 50px;
+            color: aliceblue;
+        }
+        .demo ul{
+            display: flex;
+        }
+        .demo ul li a{
+            cursor: pointer;
+            display: block;
+            padding: 20px;
+            color: beige;
+            text-decoration: solid;
+            font-size: 18px;
+        }
+       #btn1{
+            float: left;
+            background-color: #bcb8b8;
+            color: #000000;
+            outline: none;
+            border: skyblue;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+
+    </div>
+    <input type="button" value="click Me" id="btn1">
+</body>
+<script>
+    var btn = document.getElementById("btn1");
+    btn.addEventListener('click', function () { 
+        var colorlist = ["red","black","grey","blue","yellow"];
+        // loop 1
+        var txt="";
+        for(i in colorlist){
+            txt = txt +` 
+            <li>
+                <a href="">${colorlist[i]}</a>
+            </li>`;
+        }
+        document.querySelector(".demo").innerHTML =`<ul>${txt}</ul>`;
+
+
+
+        /*Loop 2
+        var num = colorlist.length;//count element in array;
+        for(x = 1; x < num ; x++){
+            console.log(colorlist[x]);
+        }*/
+    });
+</script>
+</html>

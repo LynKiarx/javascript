@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <div class="menu-bar">
+          <div class="menu">
+            <!-- <ul>
+                <li>
+                    <a href="">Home</a>
+                </li>
+                <li>
+                    <a href="">About</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+            </ul> -->
+          </div>
+    </div>
+</body>
+<script>
+    var itemlist = ["Home","Apple","Google","Meta","SpaceX"];
+    displayMenu();
+    var txt = "";
+    //array
+    function displayMenu(){
+        for(i in itemlist){
+            txt = txt + `
+                <li>
+                    <a href="">${itemlist[i]}</a>
+                </li>`;
+        }
+        document.querySelector(".menu").innerHTML = `<ul>${txt}</ul>`;
+    }
+    //obj
+    const obj1 = {"branch":"Apple",
+                  "title":"Iphone 15 pro",
+                  "price":"2349",
+                  "color":"Black"};
+                  console.log(obj1);
+</script>
+</html>

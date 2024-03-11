@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+.menu-bar{
+    width: 100%;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+}
+.menu{
+    width: 100%;
+    background-color: rgb(191, 77, 77);
+}
+.menu ul{
+    display: flex;
+}
+.menu ul li a{
+    display: block;
+    padding: 20px;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+.menu ul li a:hover{
+    background-color: rgb(255, 255, 255);
+
+}

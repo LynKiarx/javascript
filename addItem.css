@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
+   
+}
+label{
+    margin: 20px;
+    margin-left: 250px;
+}
+input{
+    margin-left: 30px;
+    padding: 20px;
+}
+.data-box{
+    width: 70%;
+    background-color: aliceblue;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.data-box ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+} 
+.data-box ul li{
+    width: 45%;
+    background-color: rgb(255, 255, 255);
+    color: white;
+    border-radius: 10px;
+}
+.data-box ul li a{
+    display: flex;
+    flex-direction: column;
+    color: #dd0000;
+    text-decoration: none;
+    position: relative;
+}
+.btn-remove{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    color: #f60808;
+}
+.btn-remove:hover{
+    opacity: 0.8;
+
+}
+.data-box ul li a span{
+    font-size: 18px;
+}
+

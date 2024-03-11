@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result</title>
+  </head>
+  <body>
+    <label for="">Total Score</label>
+    <input type="text" name="" id="txt-total-score" />
+    <label for="">Result</label>
+    <input type="text" name="" id="txt-result" />
+  </body>
+  <script>
+    const totalScore = document.getElementById("txt-total-score");
+    const result = document.getElementById("txt-result");
+    totalScore.addEventListener("keyup", function () {
+      //long statement
+      if (totalScore.value >= 50) {
+        result.value = "Pass";
+      } else if (totalScore.value < 50) {
+        result.value = "Fail";
+      } else {
+        alert("Input is not valid!");
+      }
+      //Short statement
+      //totalScore.value >= 50 ? result.value = "Pass" : result.value="Fail";
+    });
+  </script>
+</html>
